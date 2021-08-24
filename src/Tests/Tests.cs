@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Threading.Tasks;
 using VerifyTests;
-using VerifyNUnit;
-using NUnit.Framework;
+using VerifyXunit;
+using Xunit;
 
-[TestFixture]
+[UsesVerify]
 public class Tests
 {
     record Target(string Property1, string Property2);
@@ -15,8 +15,8 @@ public class Tests
         VerifyQuibble.Initialize();
         VerifierSettings.DisableClipboard();
     }
-
-    [Test]
+    
+    [Fact]
     public async Task Simple()
     {
         var settings = new VerifySettings();
@@ -27,14 +27,14 @@ public class Tests
             .AutoVerify();
 
         FileNameBuilder.ClearPrefixList();
-        await Verifier.ThrowsTask(() =>
-                Verifier.Verify(
-                    new Target("ValueC", "ValueD"),
-                    settings))
-            .ScrubLinesContaining("DiffEngineTray");
+        var exception = await Assert.ThrowsAnyAsync<Exception>(() =>
+            Verifier.Verify(new Target("ValueC", "ValueD"), settings));
+        Assert.Contains(@"Compare Result:
+String value difference at $.Property1: ValueC vs ValueA.
+String value difference at $.Property2: ValueD vs ValueB.", exception.Message);
     }
 
-    [Test]
+    [Fact]
     public async Task Sample()
     {
         var target = new Target(
