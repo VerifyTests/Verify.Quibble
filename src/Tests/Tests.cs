@@ -37,7 +37,9 @@ public class Tests
     [Test]
     public async Task Sample()
     {
-        var target = new Target("ValueA", "ValueB");
+        var target = new Target(
+            Property1: "ValueC",
+            Property2: "ValueD");
         await Verifier.Verify(target);
     }
 }

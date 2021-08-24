@@ -1,6 +1,6 @@
 # <img src="/src/icon.png" height="30px"> Verify.Quibble
 
-[![Build status](https://ci.appveyor.com/api/projects/status/9ug1ufa69m4vf4ph?svg=true)](https://ci.appveyor.com/project/SimonCropp/Verify-Quibble)
+[![Build status](https://ci.appveyor.com/api/projects/status/a87e2jpm0s4f34gu?svg=true)](https://ci.appveyor.com/project/SimonCropp/Verify-Quibble)
 [![NuGet Status](https://img.shields.io/nuget/v/Verify.Quibble.svg)](https://www.nuget.org/packages/Verify.Quibble/)
 
 Extends [Verify](https://github.com/VerifyTests/Verify) to allow [comparison](https://github.com/VerifyTests/Verify/blob/master/docs/comparer.md) of text via [Quibble](https://github.com/nrkno/Quibble).
@@ -19,17 +19,25 @@ https://nuget.org/packages/Verify.Quibble/
 
 ### Initialize
 
-Call `VerifyQuibble.Initialize()` once at assembly load time.
+Call once at assembly load time:
+
+```
+VerifierSettings.UseStrictJson();
+VerifyQuibble.Initialize();
+```
+
+`UseStrictJson` is required since Verify by default [uses a variant of json](https://github.com/VerifyTests/Verify/blob/main/docs/serializer-settings.md#not-valid-json) which Quibble cannot parse.
 
 
-### Verify text
+### Verify
 
 Given an existing verified file:
 
-```
-The
-before
-text
+```json
+{
+  "Property1": "ValueA",
+  "Property2": "ValueB"
+}
 ```
 
 And a test:
@@ -38,9 +46,9 @@ And a test:
 [Test]
 public async Task Sample()
 {
-    var target = @"The
-after
-text";
+    var target = new Target(
+        Property1: "ValueC",
+        Property2: "ValueD");
     await Verifier.Verify(target);
 }
 ```
@@ -52,12 +60,11 @@ When the comparison fails, the resulting differences will be included in the tes
 
 ```txt
 Results do not match.
+Use DiffEngineTray to verify files.
 Differences:
-Received: Tests.Sample.received.txt
-Verified: Tests.Sample.verified.txt
+Received: Tests.Sample.received.json
+Verified: Tests.Sample.verified.json
 Compare Result:
-  The
-- before
-+ after
-  text
+String value difference at $.Property1: ValueC vs ValueA.
+String value difference at $.Property2: ValueD vs ValueB.
 ```
