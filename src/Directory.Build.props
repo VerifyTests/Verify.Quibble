@@ -2,10 +2,10 @@
 <Project>
   <PropertyGroup>
     <NoWarn>CS1591;CS0649</NoWarn>
-    <Version>0.1.0</Version>
+    <Version>0.1.1</Version>
     <AssemblyVersion>1.0.0</AssemblyVersion>
-    <PackageTags>DiffPlex, Verify</PackageTags>
+    <PackageTags>Quibble, Verify</PackageTags>
     <SignAssembly>false</SignAssembly>
-    <Description>Extends Verify (https://github.com/VerifyTests/Verify) to allow comparison of text via DiffPlex (https://github.com/mmanela/diffplex).</Description>
+    <Description>Extends Verify (https://github.com/VerifyTests/Verify) to allow comparison of text via Quibble (https://github.com/nrkno/Quibble).</Description>
   </PropertyGroup>
 </Project>
