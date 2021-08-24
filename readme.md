@@ -68,3 +68,8 @@ Compare Result:
 String value difference at $.Property1: ValueC vs ValueA.
 String value difference at $.Property2: ValueD vs ValueB.
 ```
+
+
+## Icon
+
+[Argument](https://thenounproject.com/term/argument/2311124/) designed by [Vinence Studio](https://thenounproject.com/vinzencestudio/) from [The Noun Project](https://thenounproject.com).
