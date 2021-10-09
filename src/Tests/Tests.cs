@@ -1,6 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
-using VerifyTests;
+﻿using VerifyTests;
 using VerifyXunit;
 using Xunit;
 
@@ -14,24 +12,6 @@ public class Tests
         VerifierSettings.UseStrictJson();
         VerifyQuibble.Initialize();
         VerifierSettings.DisableClipboard();
-    }
-    
-    [Fact]
-    public async Task Simple()
-    {
-        var settings = new VerifySettings();
-        settings.UseMethodName("Foo");
-        settings.DisableDiff();
-
-        await Verifier.Verify(new Target("ValueA", "ValueB"), settings)
-            .AutoVerify();
-
-        FileNameBuilder.ClearPrefixList();
-        var exception = await Assert.ThrowsAnyAsync<Exception>(() =>
-            Verifier.Verify(new Target("ValueC", "ValueD"), settings));
-        Assert.Contains(@"Compare Result:
-String value difference at $.Property1: ValueC vs ValueA.
-String value difference at $.Property2: ValueD vs ValueB.", exception.Message);
     }
 
     [Fact]

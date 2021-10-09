@@ -1,36 +1,32 @@
-﻿using System;
-using System.Linq;
-using System.Threading.Tasks;
-using Quibble.CSharp;
+﻿using Quibble.CSharp;
 
-namespace VerifyTests
+namespace VerifyTests;
+
+public static class VerifyQuibble
 {
-    public static class VerifyQuibble
+    public static void Initialize()
     {
-        public static void Initialize()
+        if (!VerifierSettings.StrictJson)
         {
-            if (!VerifierSettings.StrictJson)
-            {
-                throw new("VerifyQuibble requers that VerifierSettings.UseStrictJson() is enabled");
-            }
-
-            VerifierSettings.RegisterStringComparer(
-                "json",
-                (received, verified, _) =>
-                {
-                    if (verified == string.Empty)
-                    {
-                        verified = "{}";
-                    }
-                    var list = JsonStrings.TextDiff(received, verified);
-                    if (!list.Any())
-                    {
-                        return Task.FromResult(CompareResult.Equal);
-                    }
-
-                    var result = string.Join(Environment.NewLine, list);
-                    return Task.FromResult(CompareResult.NotEqual(result));
-                });
+            throw new("VerifyQuibble requers that VerifierSettings.UseStrictJson() is enabled");
         }
+
+        VerifierSettings.RegisterStringComparer(
+            "json",
+            (received, verified, _) =>
+            {
+                if (verified == string.Empty)
+                {
+                    verified = "{}";
+                }
+                var list = JsonStrings.TextDiff(received, verified);
+                if (!list.Any())
+                {
+                    return Task.FromResult(CompareResult.Equal);
+                }
+
+                var result = string.Join(Environment.NewLine, list);
+                return Task.FromResult(CompareResult.NotEqual(result));
+            });
     }
 }
