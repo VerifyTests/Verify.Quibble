@@ -20,6 +20,6 @@ public class Tests
         var target = new Target(
             Property1: "ValueC",
             Property2: "ValueD");
-        await Verifier.Verify(target);
+        await Verify(target);
     }
 }
