@@ -7,7 +7,6 @@ public class Tests
     {
         VerifierSettings.UseStrictJson();
         VerifyQuibble.Initialize();
-        VerifierSettings.DisableClipboard();
     }
 
     [Fact]
