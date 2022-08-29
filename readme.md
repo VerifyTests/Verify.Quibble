@@ -6,7 +6,6 @@
 Extends [Verify](https://github.com/VerifyTests/Verify) to allow [comparison](https://github.com/VerifyTests/Verify/blob/master/docs/comparer.md) of text via [Quibble](https://github.com/nrkno/Quibble).
 
 
-
 ## NuGet package
 
 https://nuget.org/packages/Verify.Quibble/
@@ -17,12 +16,17 @@ https://nuget.org/packages/Verify.Quibble/
 
 ### Initialize
 
-Call once at assembly load time:
-
+<!-- snippet: enable -->
+<a id='snippet-enable'></a>
+```cs
+[ModuleInitializer]
+public static void Init()
+{
+    VerifierSettings.UseStrictJson();
+    VerifyQuibble.Initialize();
 ```
-VerifierSettings.UseStrictJson();
-VerifyQuibble.Initialize();
-```
+<sup><a href='/src/Tests/ModuleInit.cs#L3-L11' title='Snippet source file'>snippet source</a> | <a href='#snippet-enable' title='Start of snippet'>anchor</a></sup>
+<!-- endSnippet -->
 
 `UseStrictJson` is required since Verify by default [uses a variant of json](https://github.com/VerifyTests/Verify/blob/main/docs/serializer-settings.md#not-valid-json) which Quibble cannot parse.
 
