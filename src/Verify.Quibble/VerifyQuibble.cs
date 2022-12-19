@@ -6,9 +6,10 @@ public static class VerifyQuibble
 {
     public static void Initialize()
     {
+        InnerVerifier.ThrowIfVerifyHasBeenRun();
         if (!VerifierSettings.StrictJson)
         {
-            throw new("VerifyQuibble requers that VerifierSettings.UseStrictJson() is enabled");
+            throw new("VerifyQuibble requires that VerifierSettings.UseStrictJson() is enabled");
         }
 
         VerifierSettings.RegisterStringComparer(
