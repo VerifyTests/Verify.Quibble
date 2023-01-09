@@ -7,9 +7,11 @@
     {
         VerifierSettings.UseStrictJson();
         VerifyQuibble.Initialize();
-
-        #endregion
-
-        VerifyDiffPlex.Initialize();
     }
+
+    #endregion
+
+    [ModuleInitializer]
+    public static void InitOther() =>
+        VerifyDiffPlex.Initialize();
 }

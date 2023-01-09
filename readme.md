@@ -24,8 +24,9 @@ public static void Init()
 {
     VerifierSettings.UseStrictJson();
     VerifyQuibble.Initialize();
+}
 ```
-<sup><a href='/src/Tests/ModuleInit.cs#L3-L11' title='Snippet source file'>snippet source</a> | <a href='#snippet-enable' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/ModuleInit.cs#L3-L12' title='Snippet source file'>snippet source</a> | <a href='#snippet-enable' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 `UseStrictJson` is required since Verify by default [uses a variant of json](https://github.com/VerifyTests/Verify/blob/main/docs/serializer-settings.md#not-valid-json) which Quibble cannot parse.
