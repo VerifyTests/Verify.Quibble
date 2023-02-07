@@ -3,12 +3,6 @@ public class Tests
 {
     record Target(string Property1, string Property2);
 
-    static Tests()
-    {
-        VerifierSettings.UseStrictJson();
-        VerifyQuibble.Initialize();
-    }
-
     [Fact]
     public async Task Sample()
     {
