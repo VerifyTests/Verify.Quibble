@@ -2,7 +2,7 @@
 
 public static class VerifyQuibble
 {
-    public static bool Initialized {get; private set; }
+    public static bool Initialized { get; private set; }
 
     public static void Initialize()
     {
