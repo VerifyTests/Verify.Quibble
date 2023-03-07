@@ -10,6 +10,6 @@
     <PackageReference Include="Verify.Xunit" Version="19.10.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.5.0" />
     <ProjectReference Include="..\Verify.Quibble\Verify.Quibble.csproj" />
-    <PackageReference Include="ProjectDefaults" Version="1.0.87" PrivateAssets="all" />
+    <PackageReference Include="ProjectDefaults" Version="1.0.88" PrivateAssets="all" />
   </ItemGroup>
 </Project>
