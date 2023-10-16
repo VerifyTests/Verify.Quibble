@@ -8,5 +8,6 @@
     <PackageTags>Quibble, Verify</PackageTags>
     <SignAssembly>false</SignAssembly>
     <Description>Extends Verify (https://github.com/VerifyTests/Verify) to allow comparison of text via Quibble (https://github.com/nrkno/Quibble).</Description>
+    <ResolveAssemblyReferencesSilent>true</ResolveAssemblyReferencesSilent>
   </PropertyGroup>
 </Project>
