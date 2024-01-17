@@ -1,5 +1,4 @@
-﻿[UsesVerify]
-public class Tests
+﻿public class Tests
 {
     record Target(string Property1, string Property2);
 
