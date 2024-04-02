@@ -1,3 +1,1 @@
-﻿// Global using directives
-
-global using Quibble.CSharp;
+﻿global using Quibble.CSharp;
