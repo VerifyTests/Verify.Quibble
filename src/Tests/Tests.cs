@@ -1,4 +1,5 @@
-﻿public class Tests
+﻿// ReSharper disable NotAccessedPositionalProperty.Local
+public class Tests
 {
     record Target(string Property1, string Property2);
 

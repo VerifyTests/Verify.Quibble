@@ -7,5 +7,6 @@
     <PackageReference Include="Quibble" />
     <PackageReference Include="Verify" />
     <PackageReference Include="ProjectDefaults" PrivateAssets="all" />
+    <PackageReference Include="System.Text.Json" />
   </ItemGroup>
 </Project>
