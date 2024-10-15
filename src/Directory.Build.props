@@ -9,9 +9,8 @@
     <SignAssembly>false</SignAssembly>
     <Description>Extends Verify (https://github.com/VerifyTests/Verify) to allow comparison of text via Quibble (https://github.com/nrkno/Quibble).</Description>
     <ResolveAssemblyReferencesSilent>true</ResolveAssemblyReferencesSilent>
-    <NuGetAuditMode>all</NuGetAuditMode>
-    <NuGetAuditLevel>low</NuGetAuditLevel>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <SuppressNETCoreSdkPreviewMessage>true</SuppressNETCoreSdkPreviewMessage>
   </PropertyGroup>
 </Project>
