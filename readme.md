@@ -9,9 +9,9 @@ Extends [Verify](https://github.com/VerifyTests/Verify) to allow [comparison](ht
 **See [Milestones](../../milestones?state=closed) for release notes.**
 
 
-## NuGet package
+## NuGet
 
-https://nuget.org/packages/Verify.Quibble/
+ * https://nuget.org/packages/Verify.Quibble
 
 
 ## Usage
