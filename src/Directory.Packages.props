@@ -9,9 +9,9 @@
     <PackageVersion Include="Polyfill" Version="9.3.0" />
     <PackageVersion Include="ProjectDefaults" Version="1.0.163" />
     <PackageVersion Include="Quibble" Version="0.3.1" />
-    <PackageVersion Include="Verify" Version="31.7.2" />
+    <PackageVersion Include="Verify" Version="31.7.3" />
     <PackageVersion Include="Verify.DiffPlex" Version="3.1.2" />
-    <PackageVersion Include="Verify.XunitV3" Version="31.7.2" />
+    <PackageVersion Include="Verify.XunitV3" Version="31.7.3" />
     <PackageVersion Include="Microsoft.Sbom.Targets" Version="4.1.4" />
     <!-- explicit to avoid a cve -->
     <PackageVersion Include="System.Text.Json" Version="10.0.0" />
