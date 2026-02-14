@@ -7,6 +7,11 @@
     <PackageReference Include="MarkdownSnippets.MsBuild" PrivateAssets="all" />
     <PackageReference Include="Verify.DiffPlex" />
     <PackageReference Include="Verify.XunitV3" />
+    <PackageReference Include="Argon" />
+    <PackageReference Include="DiffEngine" />
+    <PackageReference Include="EmptyFiles" />
+    <PackageReference Include="SimpleInfoName" />
+    <PackageReference Include="Verify" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" />
     <ProjectReference Include="..\Verify.Quibble\Verify.Quibble.csproj" />
     <PackageReference Include="ProjectDefaults" PrivateAssets="all" />
