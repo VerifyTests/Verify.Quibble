@@ -7,13 +7,13 @@
   <ItemGroup>
     <PackageReference Include="MarkdownSnippets.MsBuild" PrivateAssets="all" />
     <PackageReference Include="Verify.DiffPlex" />
-    <PackageReference Include="Verify.XunitV3" VersionOverride="33.0.1" />
+    <PackageReference Include="Verify.XunitV3" VersionOverride="33.1.0" />
     <PackageReference Include="xunit.v3" />
     <PackageReference Include="Argon" />
     <PackageReference Include="DiffEngine" />
     <PackageReference Include="EmptyFiles" />
     <PackageReference Include="SimpleInfoName" />
-    <PackageReference Include="Verify" VersionOverride="33.0.1" />
+    <PackageReference Include="Verify" VersionOverride="33.1.0" />
     <ProjectReference Include="..\Verify.Quibble\Verify.Quibble.csproj" />
     <PackageReference Include="ProjectDefaults" PrivateAssets="all" />
   </ItemGroup>
