@@ -28,7 +28,7 @@ public static class VerifyQuibble
                     verified = "{}";
                 }
                 var list = JsonStrings.TextDiff(received, verified);
-                if (!list.Any())
+                if (list.Count == 0)
                 {
                     return Task.FromResult(CompareResult.Equal);
                 }

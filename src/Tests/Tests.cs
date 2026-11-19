@@ -3,7 +3,7 @@ public class Tests
 {
     record Target(string Property1, string Property2);
 
-    [Fact]
+    [Test]
     public async Task Sample()
     {
         var target = new Target(
